@@ -6,8 +6,8 @@ Then('I should see default deposit for currency {string} is {string}', async fun
     expect(await this.depositPage.getDepositForCurrency(currency)).toBe(deposit);
 });
 
-When('I click {string} button for {string} - balance is {string}', async function (this: CustomWorld, button: string, currency: string, deposit: string) {
-    await this.depositPage.clickActionButtonForCurrency(button, currency, deposit);
+When('I click {string} button for {string}', async function (this: CustomWorld, action: string, currency: string) {
+    await this.depositPage.clickActionButtonForCurrency(action, currency);
 });
 
 Then('I see current deposit is {string} {string}', async function (this: CustomWorld, deposit: string, currency: string) {

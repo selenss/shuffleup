@@ -38,7 +38,7 @@ export class CustomWorld extends World {
     await waitForServer(this.baseUrl)
 
     // load config from mock server
-      await loadConfig(this.baseUrl)
+    await loadConfig(this.baseUrl)
 
     // launch browser (chromium / firefox / webkit)
     this.browser = await launchBrowser()
@@ -48,6 +48,9 @@ export class CustomWorld extends World {
 
     // create page
     this.page = await this.context.newPage()
+
+    this.page.setDefaultTimeout(15000)
+    this.page.setDefaultNavigationTimeout(30000)
 
     this.loginPage = new LoginPage(this)
     this.brandsPage = new BrandsPage(this)

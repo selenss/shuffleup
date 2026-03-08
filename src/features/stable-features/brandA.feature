@@ -8,10 +8,12 @@ Background:
 
 Scenario Outline: Brand currency deposit validation 
   Then I should see default deposit for currency "<currency>" is "<default_deposit>"
-  And I click "<action_button>" button for "<currency>" - balance is "<balance>"
+  And I click "<action_button>" button for "<currency>"
   Then I see current deposit is "<current_deposit>" "<currency>"
 
 Examples:
-| currency | default_deposit | action_button | current_deposit | balance  |
-| EUR      | 100             | Win           | 110             | 10       |
-| USD      | 100             | Loose         | 90              | 10       |
+| currency | default_deposit | action_button | current_deposit |
+| EUR      | 100             | Win           | 110             |
+| USD      | 100             | Win           | 110             |
+| EUR      | 100             | Loose         | 90              |
+| USD      | 100             | Loose         | 90              |

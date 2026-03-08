@@ -41,11 +41,19 @@ export class BasePage {
     await this.page.goto(url, { waitUntil: "domcontentloaded" })
   }
 
-  async click(element: Locator): Promise<void> {
-    await expect(element).toBeVisible()
-    await expect(element).toBeEnabled()
+  async click(element: Locator, waitLocator?: Locator, expectedText?: string): Promise<void> {
+  await expect(element).toBeVisible()
+  await expect(element).toBeEnabled()
+
+  if (waitLocator && expectedText) {
+    await Promise.all([
+      expect(waitLocator).toContainText(expectedText),
+      element.click()
+    ])
+  } else {
     await element.click()
   }
+}
 
   async fill(element: Locator, value: string): Promise<void> {
     await expect(element).toBeVisible()
@@ -57,10 +65,6 @@ export class BasePage {
     await expect(element).toBeVisible()
     const text = await element.innerText()
     return text.trim()
-  }
-
-  async checkElementTextContain(element: Locator, text: String): Promise<void> {
-    expect(await this.getElementText(element)).toContain(text);
   }
 
   async getCurrentUrl(): Promise<string> {

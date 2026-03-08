@@ -59,6 +59,10 @@ export class BasePage {
     return text.trim()
   }
 
+  async checkElementTextContain(element: Locator, text: String): Promise<void> {
+    expect(await this.getElementText(element)).toContain(text);
+  }
+
   async getCurrentUrl(): Promise<string> {
     await this.page.waitForLoadState("domcontentloaded")
     return this.page.url()

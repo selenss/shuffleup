@@ -1,0 +1,25 @@
+{
+  "name": "igaming-playwright-cucumber-framework",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "test": "npm run clean && npm run generate:examples && cucumber-js",
+    "test:headed": "npm run clean && npm run generate:examples && HEADED=true cucumber-js",
+    "test:chromium": "npm run clean && npm run generate:examples && BROWSER=chromium HEADED=true cucumber-js",
+    "test:firefox": "npm run clean && npm run generate:examples && BROWSER=firefox HEADED=true cucumber-js",
+    "test:webkit": "npm run clean && npm run generate:examples && BROWSER=webkit HEADED=true cucumber-js",
+    "test:login": "npm run clean && npm run generate:examples && BROWSER=chromium cucumber-js --tags @login",
+    "test:brands": "npm run clean && npm run generate:examples && BROWSER=chromium cucumber-js --tags @brands",
+    "test:brandA": "npm run clean && npm run generate:examples && BROWSER=chromium cucumber-js --tags @brandA",
+    "clean": "rimraf reports",
+    "generate:examples": "ts-node src/matrix/examplesGenerator.ts"
+  },
+  "devDependencies": {
+    "@cucumber/cucumber": "^12.6.0",
+    "@playwright/test": "^1.58.2",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.9.3",
+    "@mockoon/cli": "^9.5.0",
+    "rimraf": "^6.1.3"
+  }
+}

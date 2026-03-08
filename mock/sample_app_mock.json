@@ -1,0 +1,432 @@
+{
+  "uuid": "4d80a243-203e-40cc-8c50-f35a05d8a3b7",
+  "lastMigration": 33,
+  "name": "Mock Casino",
+  "endpointPrefix": "",
+  "latency": 0,
+  "port": 3002,
+  "hostname": "",
+  "folders": [],
+  "routes": [
+    {
+      "uuid": "c5c8f1c8-81c7-4a31-aa13-dd1c4f3668c7",
+      "type": "http",
+      "method": "get",
+      "endpoint": "",
+      "responses": [
+        {
+          "uuid": "2e44b92a-8a44-423f-a43a-60515f3e0d30",
+          "body": "<!DOCTYPE html>\n<html>\n<head><title>Mock Casino Login</title></head>\n<body style=\"font-family:Arial;text-align:center\">\n<h1>Mock Casino</h1>\n<h2>Login</h2>\n<input id=\"username\" placeholder=\"username\"/>\n<input id=\"password\" placeholder=\"password\"/>\n<br><br>\n<button id=\"login_button\" onclick=\"login()\">Login</button>\n<script>\nasync function login(){\n await fetch(\"/api/login\",{method:\"POST\"})\n window.location.href=\"/brands\"\n}\n</script>\n</body>\n</html>\n",
+          "statusCode": 200,
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "text/html"
+            }
+          ],
+          "bodyType": "INLINE",
+          "default": true,
+          "latency": 0,
+          "label": "",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "crudKey": "id",
+          "callbacks": []
+        }
+      ],
+      "documentation": "",
+      "responseMode": null,
+      "streamingMode": null,
+      "streamingInterval": 0
+    },
+    {
+      "uuid": "681a648e-2a14-43c6-9fac-e3b8d6c58c4b",
+      "type": "http",
+      "method": "post",
+      "endpoint": "api/login",
+      "responses": [
+        {
+          "uuid": "79b2fd18-1e2f-4bbe-a0be-ed28fdbd2e79",
+          "body": "{ \"status\":\"success\" }",
+          "statusCode": 200,
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "bodyType": "INLINE",
+          "default": true,
+          "latency": 0,
+          "label": "",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "crudKey": "id",
+          "callbacks": []
+        }
+      ],
+      "documentation": "",
+      "responseMode": null,
+      "streamingMode": null,
+      "streamingInterval": 0
+    },
+    {
+      "uuid": "133ff17e-a074-4be4-b4db-e20b588ce6b4",
+      "type": "http",
+      "method": "get",
+      "endpoint": "api/currency-flags",
+      "responses": [
+        {
+          "uuid": "8c09de93-30d0-4126-b669-9bc5530e0fa2",
+          "body": "{ \"brandA\": { \"EUR\": true, \"USD\": true }, \"brandB\": { \"EUR\": true, \"USD\": false } }",
+          "statusCode": 200,
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "bodyType": "INLINE",
+          "default": true,
+          "latency": 0,
+          "label": "",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "crudKey": "id",
+          "callbacks": []
+        }
+      ],
+      "documentation": "",
+      "responseMode": null,
+      "streamingMode": null,
+      "streamingInterval": 0
+    },
+    {
+      "uuid": "56949518-9ced-43a2-9e92-c5eb5b76de25",
+      "type": "http",
+      "method": "get",
+      "endpoint": "api/payments-flags",
+      "responses": [
+        {
+          "uuid": "633e0f65-c65e-4564-a89b-ed32afbe5d79",
+          "body": "{ \"brandA\": { \"LHV\": true, \"SEB\": true }, \"brandB\": { \"LHV\": true, \"SEB\": false } }",
+          "statusCode": 200,
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "bodyType": "INLINE",
+          "default": true,
+          "latency": 0,
+          "label": "",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "crudKey": "id",
+          "callbacks": []
+        }
+      ],
+      "documentation": "",
+      "responseMode": null,
+      "streamingMode": null,
+      "streamingInterval": 0
+    },
+    {
+      "uuid": "ff37241a-d680-46ea-ad6b-3935084adc6f",
+      "type": "http",
+      "method": "get",
+      "endpoint": "api/deposit",
+      "responses": [
+        {
+          "uuid": "5bc6682f-e601-45ed-ac38-a7d0c48be029",
+          "body": "{ \"EUR\":100, \"USD\":100 }",
+          "statusCode": 200,
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "bodyType": "INLINE",
+          "default": true,
+          "latency": 0,
+          "label": "",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "crudKey": "id",
+          "callbacks": []
+        }
+      ],
+      "documentation": "",
+      "responseMode": null,
+      "streamingMode": null,
+      "streamingInterval": 0
+    },
+    {
+      "uuid": "81ad12ff-6227-49c7-b15e-a7e701f93517",
+      "type": "http",
+      "method": "post",
+      "endpoint": "api/win",
+      "responses": [
+        {
+          "uuid": "15dd1eab-c081-42de-b742-b069d85a27ed",
+          "body": "{ \"result\":\"win\",\"amount\":10 }",
+          "statusCode": 200,
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "bodyType": "INLINE",
+          "default": true,
+          "latency": 0,
+          "label": "",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "crudKey": "id",
+          "callbacks": []
+        }
+      ],
+      "documentation": "",
+      "responseMode": null,
+      "streamingMode": null,
+      "streamingInterval": 0
+    },
+    {
+      "uuid": "7053e455-cc8c-41a2-8744-effaa84d6730",
+      "type": "http",
+      "method": "post",
+      "endpoint": "api/loose",
+      "responses": [
+        {
+          "uuid": "3d6bd96f-8353-46c0-8eb8-4d0b8c6fca13",
+          "body": "{ \"result\":\"loose\",\"amount\":10 }",
+          "statusCode": 200,
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "bodyType": "INLINE",
+          "default": true,
+          "latency": 0,
+          "label": "",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "crudKey": "id",
+          "callbacks": []
+        }
+      ],
+      "documentation": "",
+      "responseMode": null,
+      "streamingMode": null,
+      "streamingInterval": 0
+    },
+    {
+      "uuid": "3de54f57-53dd-49df-8c79-00a532dfc202",
+      "type": "http",
+      "method": "get",
+      "endpoint": "brandA",
+      "responses": [
+        {
+          "uuid": "5b32f768-2af5-46b2-bbe7-21e5993cd8cb",
+          "body": "<!DOCTYPE html>\n<html>\n<head><title>Brand A</title></head>\n<body style=\"font-family:Arial;text-align:center\">\n\n<h1>Brand A Casino</h1>\n\n<h2>Deposit</h2>\n\n<div id=\"eurBlock\">\nEUR: <span id=\"eurBalance\">100</span>\n<button onclick=\"win('EUR')\">Win</button>\n<button onclick=\"loose('EUR')\">Loose</button>\n</div>\n\n<br>\n\n<div id=\"usdBlock\">\nUSD: <span id=\"usdBalance\">100</span>\n<button onclick=\"win('USD')\">Win</button>\n<button onclick=\"loose('USD')\">Loose</button>\n</div>\n\n<h2>Payments</h2>\n\n<div id=\"lhvBlock\" style=\"display:none\">\n<button id=\"lhvBtn\">Pay with LHV</button>\n</div>\n\n<div id=\"sebBlock\" style=\"display:none\">\n<button id=\"sebBtn\">Pay with SEB</button>\n</div>\n\n<script>\n\nlet depositState={EUR:100,USD:100}\n\nasync function init(){\n\nconst currencyFlags = await fetch(\"/api/currency-flags\").then(r=>r.json())\nconst paymentFlags = await fetch(\"/api/payments-flags\").then(r=>r.json())\n\nif(!currencyFlags.brandA.EUR){\n document.getElementById(\"eurBlock\").style.display=\"none\"\n}\n\nif(!currencyFlags.brandA.USD){\n document.getElementById(\"usdBlock\").style.display=\"none\"\n}\n\nif(paymentFlags.brandA.LHV){\n document.getElementById(\"lhvBlock\").style.display=\"block\"\n}\n\nif(paymentFlags.brandA.SEB){\n document.getElementById(\"sebBlock\").style.display=\"block\"\n}\n\n}\n\ninit()\n\nasync function win(currency){\n await fetch(\"/api/win\",{method:\"POST\"})\n depositState[currency]+=10\n update()\n}\n\nasync function loose(currency){\n await fetch(\"/api/loose\",{method:\"POST\"})\n depositState[currency]-=10\n update()\n}\n\nfunction update(){\n if(document.getElementById(\"eurBalance\")){\n  document.getElementById(\"eurBalance\").innerText=depositState.EUR\n }\n if(document.getElementById(\"usdBalance\")){\n  document.getElementById(\"usdBalance\").innerText=depositState.USD\n }\n}\n\n</script>\n\n</body>\n</html>\n",
+          "statusCode": 200,
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "text/html"
+            }
+          ],
+          "bodyType": "INLINE",
+          "default": true,
+          "latency": 0,
+          "label": "",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "crudKey": "id",
+          "callbacks": []
+        }
+      ],
+      "documentation": "",
+      "responseMode": null,
+      "streamingMode": null,
+      "streamingInterval": 0
+    },
+    {
+      "uuid": "ccd61da3-86e6-4a97-a853-bf124ee424c4",
+      "type": "http",
+      "method": "get",
+      "endpoint": "brandB",
+      "responses": [
+        {
+          "uuid": "ffe1c9dc-1a0a-461b-84f2-651892ac1527",
+          "body": "<!DOCTYPE html>\n<html>\n<head><title>Brand B</title></head>\n<body style=\"font-family:Arial;text-align:center\">\n\n<h1>Brand B Casino</h1>\n\n<h2>Deposit</h2>\n\n<div id=\"eurBlock\">\nEUR: <span id=\"eurBalance\">100</span>\n<button onclick=\"win('EUR')\">Win</button>\n<button onclick=\"loose('EUR')\">Loose</button>\n</div>\n\n<div id=\"usdBlock\" style=\"display:none\">\nUSD: <span id=\"usdBalance\">100</span>\n<button onclick=\"win('USD')\">Win</button>\n<button onclick=\"loose('USD')\">Loose</button>\n</div>\n\n<h2>Payments</h2>\n\n<div id=\"lhvBlock\" style=\"display:none\">\n<button id=\"lhvBtn\">Pay with LHV</button>\n</div>\n\n<div id=\"sebBlock\" style=\"display:none\">\n<button id=\"sebBtn\">Pay with SEB</button>\n</div>\n\n<script>\n\nlet depositState={EUR:100,USD:100}\n\nasync function init(){\n\nconst currencyFlags = await fetch(\"/api/currency-flags\").then(r=>r.json())\nconst paymentFlags = await fetch(\"/api/payments-flags\").then(r=>r.json())\n\nif(currencyFlags.brandB.USD){\n document.getElementById(\"usdBlock\").style.display=\"block\"\n}\n\nif(paymentFlags.brandB.LHV){\n document.getElementById(\"lhvBlock\").style.display=\"block\"\n}\n\nif(paymentFlags.brandB.SEB){\n document.getElementById(\"sebBlock\").style.display=\"block\"\n}\n\n}\n\ninit()\n\nasync function win(currency){\n await fetch(\"/api/win\",{method:\"POST\"})\n depositState[currency]+=10\n update()\n}\n\nasync function loose(currency){\n await fetch(\"/api/loose\",{method:\"POST\"})\n depositState[currency]-=10\n update()\n}\n\nfunction update(){\n document.getElementById(\"eurBalance\").innerText=depositState.EUR\n if(document.getElementById(\"usdBalance\")){\n  document.getElementById(\"usdBalance\").innerText=depositState.USD\n }\n}\n\n</script>\n\n</body>\n</html>\n",
+          "statusCode": 200,
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "text/html"
+            }
+          ],
+          "bodyType": "INLINE",
+          "default": true,
+          "latency": 0,
+          "label": "",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "crudKey": "id",
+          "callbacks": []
+        }
+      ],
+      "documentation": "",
+      "responseMode": null,
+      "streamingMode": null,
+      "streamingInterval": 0
+    },
+    {
+      "uuid": "c8cceeed-8d28-4354-b201-28b9fd2bb8e7",
+      "type": "http",
+      "method": "get",
+      "endpoint": "brands",
+      "responses": [
+        {
+          "uuid": "21e1ae87-0d26-4096-b98e-bdcc78604135",
+          "body": "<!DOCTYPE html>\n<html>\n<head><title>Select Brand</title></head>\n<body style=\"font-family:Arial;text-align:center\">\n\n<h1>Select Brand</h1>\n\n<button id=\"brand_a\" onclick=\"openBrand('brandA')\">Brand A</button>\n<button id=\"brand_b\" onclick=\"openBrand('brandB')\">Brand B</button>\n\n<script>\nfunction openBrand(brand){\n window.open(\"/\"+brand,\"_blank\")\n}\n</script>\n\n</body>\n</html>\n",
+          "statusCode": 200,
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "text/html"
+            }
+          ],
+          "bodyType": "INLINE",
+          "default": true,
+          "latency": 0,
+          "label": "",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "crudKey": "id",
+          "callbacks": []
+        }
+      ],
+      "documentation": "",
+      "responseMode": null,
+      "streamingMode": null,
+      "streamingInterval": 0
+    }
+  ],
+  "rootChildren": [
+    {
+      "type": "route",
+      "uuid": "c5c8f1c8-81c7-4a31-aa13-dd1c4f3668c7"
+    },
+    {
+      "type": "route",
+      "uuid": "681a648e-2a14-43c6-9fac-e3b8d6c58c4b"
+    },
+    {
+      "type": "route",
+      "uuid": "133ff17e-a074-4be4-b4db-e20b588ce6b4"
+    },
+    {
+      "type": "route",
+      "uuid": "56949518-9ced-43a2-9e92-c5eb5b76de25"
+    },
+    {
+      "type": "route",
+      "uuid": "ff37241a-d680-46ea-ad6b-3935084adc6f"
+    },
+    {
+      "type": "route",
+      "uuid": "81ad12ff-6227-49c7-b15e-a7e701f93517"
+    },
+    {
+      "type": "route",
+      "uuid": "7053e455-cc8c-41a2-8744-effaa84d6730"
+    },
+    {
+      "type": "route",
+      "uuid": "3de54f57-53dd-49df-8c79-00a532dfc202"
+    },
+    {
+      "type": "route",
+      "uuid": "ccd61da3-86e6-4a97-a853-bf124ee424c4"
+    },
+    {
+      "type": "route",
+      "uuid": "c8cceeed-8d28-4354-b201-28b9fd2bb8e7"
+    }
+  ],
+  "proxyMode": false,
+  "proxyHost": "",
+  "proxyRemovePrefix": false,
+  "tlsOptions": {
+    "enabled": false,
+    "type": "CERT",
+    "pfxPath": "",
+    "certPath": "",
+    "keyPath": "",
+    "caPath": "",
+    "passphrase": ""
+  },
+  "cors": true,
+  "headers": [],
+  "proxyReqHeaders": [],
+  "proxyResHeaders": [],
+  "data": [],
+  "callbacks": []
+}

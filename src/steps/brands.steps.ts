@@ -3,7 +3,6 @@ import assert from "assert"
 import { CustomWorld } from "../framework/world"
 import { pages } from "../config/configs"
 import { expect } from "@playwright/test"
-import "../matrix/matrixRunner"
 
 When('I open {string} brand page', async function (this: CustomWorld, brand: string) {
     let brandButtonLocator =  this.brandsPage.locator(`button[onclick="openBrand('${brand}')"]`);

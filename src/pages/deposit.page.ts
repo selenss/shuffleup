@@ -14,9 +14,10 @@ export class DepositPage extends BasePage {
     await this.click(actionButtonLocator);
   }
 
-  async getCurrentDepositForCurrency(currency: string) {
+  async getCurrentDepositForCurrency(currency: string, deposit: string) {
     let currencyTextLocator =  this.locator(`div#${currency.toLowerCase()}Block`);
     await this.waitForElementVisible(currencyTextLocator);
+    expect(await this.getElementText(currencyTextLocator)).toContain(deposit);
     return await this.getElementText(currencyTextLocator);
   }
 }

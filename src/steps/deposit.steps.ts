@@ -11,5 +11,5 @@ When('I click {string} button for {string}', async function (this: CustomWorld, 
 });
 
 Then('I see current deposit is {string} {string}', async function (this: CustomWorld, deposit: string, currency: string) {
-    expect(await this.depositPage.getCurrentDepositForCurrency(currency)).toContain(`${currency}: ${deposit}`);
+    expect(await this.depositPage.getCurrentDepositForCurrency(currency, deposit)).toContain(`${currency}: ${deposit}`);
 });

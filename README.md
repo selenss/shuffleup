@@ -131,7 +131,7 @@ This prevents collisions between tests.
 
 Follow these steps to run the project on a fresh machine.
 
-## 1. Install Node.js
+### 1. Install Node.js
 
 Download Node.js:
 
@@ -145,6 +145,14 @@ Verify installation:
 
 node -v\
 npm -v
+
+### 2. Install @mockoon/cli:
+
+npm install -g @mockoon/cli
+
+Check installation:
+
+mockoon-cli --version
 
 ------------------------------------------------------------------------
 
